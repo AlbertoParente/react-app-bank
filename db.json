@@ -1,0 +1,19 @@
+{
+    "account": {
+        "balance": 1000
+    },
+    "transactions": [
+        {
+            "value": 10,
+            "transaction": "withdraw",
+            "date": "01/03/2022",
+            "id": 1
+        },
+        {
+            "transaction": "deposit",
+            "value": "20",
+            "date": "29/03/2022",
+            "id": 2
+        }
+    ]
+}
