@@ -4,52 +4,52 @@ import Transactions from './transaction/Transactions';
 import api from './api';
 import './App.css';
 
-export const calculateNewBalance = (values, saldo) => {
-  if (values.transaction === 'deposito') {
-    return saldo + parseInt(values.valor)
-  } else {
-    return saldo - parseInt(values.valor);
-  };
+export const calculateNewBalance = (values, balance) => {
+    if (values.transaction === 'deposit') {
+        return balance + parseInt(values.value)
+    } else {
+        return balance - parseInt(values.value);
+    };
 };
 
 function App() {
-  const [saldo, atualizarSaldo] = useState(1000);
-  const [transacoes, atualizarTransacoes] = useState([]);
+    const [balance, updateBalance] = useState(1000);
+    const [transations, updateTransactions] = useState([]);
 
-  async function carregarTransacoes() {
-    const transacoes = await api.listaTransacoes();
-    atualizarTransacoes(transacoes);
-  };
+    async function loadTransactions() {
+        const transations = await api.listTransactions();
+        updateTransactions(transations);
+    };
 
-  async function obterSaldo() {
-    atualizarSaldo(await api.buscaSaldo());
-  };
+    async function getBalance() {
+        updateBalance(await api.searchBalance());
+    };
 
-  function realizarTransacao(values) {
-    const novoSaldo = calculateNewBalance(values, saldo);
+    function carryOutTransaction(values) {
+        const newBalance = calculateNewBalance(values, balance);
 
-    api.atualizaSaldo(novoSaldo).catch((error) => console.error(error))
-    api.atualizaTransacoes(values).catch((error) => console.error(error))
+        api.toUpdateBalance(newBalance).catch((error) => console.error(error))
+        api.atualizaTransactions(values).catch((error) => console.error(error))
 
-    atualizarSaldo(novoSaldo);
-    atualizarTransacoes([values]);
-  };
+        updateBalance(newBalance);
+        updateTransactions([values]);
+    };
 
-  useEffect(() => {
-    obterSaldo();
-    carregarTransacoes();
-  }, [saldo]);
+    useEffect(() => {
+        getBalance();
+        loadTransactions();
+    }, [balance]);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>ByteBank</h1>
-      </header>
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>React App Bank</h1>
+            </header>
 
-      <Conta saldo={saldo} realizarTransacao={realizarTransacao}/>
-      <Transacoes transacoes={transacoes} />
-    </div>
-  );
+            <Account balance={balance} carryOutTransaction={carryOutTransaction} />
+            <Transactions transations={transations} />
+        </div>
+    );
 };
 
 export default App;
