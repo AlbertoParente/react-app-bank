@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Account from './account/Account';
-import Transactions from './transaction/Transactions';
+import Account from './Account/Account';
+import Transactions from './Transactions/Transactions';
 import api from './api';
 import './App.css';
 
@@ -29,7 +29,7 @@ function App() {
         const newBalance = calculateNewBalance(values, balance);
 
         api.toUpdateBalance(newBalance).catch((error) => console.error(error))
-        api.atualizaTransactions(values).catch((error) => console.error(error))
+        api.updateTransactions(values).catch((error) => console.error(error))
 
         updateBalance(newBalance);
         updateTransactions([values]);

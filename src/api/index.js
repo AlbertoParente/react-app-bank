@@ -15,9 +15,9 @@ const connect = (uri, options = {}) => {
 };
 
 const listTransactions = () => connect(TRANSACTIONS_URI);
-const getBalance = () => connect(ACCOUNT_URI).then(dados => dados.balance);
+const searchBalance = () => connect(ACCOUNT_URI).then(dados => dados.balance);
 
-const updateBalance = (balance) => connect(ACCOUNT_URI, {
+const toUpdateBalance = (balance) => connect(ACCOUNT_URI, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify({ balance }),
@@ -31,7 +31,7 @@ const updateTransactions = (dados) => connect(TRANSACTIONS_URI, {
 
 export default {
     listTransactions,
-    getBalance,
-    updateBalance,
+    searchBalance,
+    toUpdateBalance,
     updateTransactions,
 };

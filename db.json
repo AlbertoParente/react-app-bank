@@ -1,19 +1,43 @@
 {
-    "account": {
-        "balance": 1000
+  "account": {
+    "balance": 1200
+  },
+  "transactions": [
+    {
+      "value": 10,
+      "transaction": "withdraw",
+      "date": "01/03/2022",
+      "id": 1
     },
-    "transactions": [
-        {
-            "value": 10,
-            "transaction": "withdraw",
-            "date": "01/03/2022",
-            "id": 1
-        },
-        {
-            "transaction": "deposit",
-            "value": "20",
-            "date": "29/03/2022",
-            "id": 2
-        }
-    ]
+    {
+      "transaction": "deposit",
+      "value": "20",
+      "date": "29/03/2022",
+      "id": 2
+    },
+    {
+      "transaction": "deposit",
+      "value": "200",
+      "data": "31/03/2022",
+      "id": 3
+    },
+    {
+      "transaction": "withdraw",
+      "value": "200",
+      "data": "31/03/2022",
+      "id": 4
+    },
+    {
+      "transaction": "withdraw",
+      "value": "100",
+      "data": "31/03/2022",
+      "id": 5
+    },
+    {
+      "transaction": "deposit",
+      "value": "300",
+      "data": "31/03/2022",
+      "id": 6
+    }
+  ]
 }
