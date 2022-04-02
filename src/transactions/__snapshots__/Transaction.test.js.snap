@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Extract transaction component Should always keep the same snapshot 1`] = `
+<div
+  class="transaction-container"
+>
+  <p>
+    02/04/2022
+  </p>
+  <p>
+    withdraw
+  </p>
+  <p>
+    R$ 
+    20.00
+  </p>
+</div>
+`;
