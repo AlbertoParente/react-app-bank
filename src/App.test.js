@@ -33,19 +33,20 @@ describe('Principal component', () => {
         });
 
         it('Should carry out a transaction', () => {
-            const { getByText, getByTextId, getByLabelText } = render(<App />);
-            const balance = getByText('R$ 1000');
-            const transaction = getByLabelText('withdraw');
-            const value = getByTextId('value');
-            const transactionButton = getByText('Carry Out Transaction')
+            render(<App />);
+
+            const balance = screen.getByText('R$ 1000');
+            const transaction = screen.getByLabelText('withdraw');
+            const value = screen.getByTextId('value');
+            const transactionButton = screen.getByText('Carry Out Transaction')
 
             expect(balance.textContent).toBe('R$ 1000');
 
-            fireEvent.click(transaction, { target: { value: 'withdraw' }});
-            fireEvent.change(value, { target: { value: '10' }});
+            fireEvent.click(transaction, { target: { value: 'withdraw' } });
+            fireEvent.change(value, { target: { value: '10' } });
             fireEvent.change(transactionButton);
 
-            expect().toBe();
+            expect(balance.textContent).toBe('R$ 990');
         });
     });
 });
