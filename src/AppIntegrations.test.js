@@ -6,24 +6,26 @@ import App from './App';
 jest.mock('./api');
 
 describe('API requests', () => {
-    it('Should display transaction list via API', () => {
+    it('Should display transaction list via API', async () => {
         api.listTransactions.mockResolvedValue([
             {
-                "value": 10,
+                "value": "10",
                 "transaction": "withdraw",
                 "date": "01/03/2022",
                 "id": 1
             },
             {
                 "transaction": "deposit",
-                "value": 20,
+                "value": "20",
                 "date": "29/03/2022",
                 "id": 2
             }
         ]);
 
         render(<App />);
-        // screen(findByText('withdraw')).toBeInTheDocument;
-        expect(screen.getByTestId('transactions').children.lenght).toBe(2);
+
+        expect(await screen.findByText('withdraw')).toBeInTheDocument();
+
+        expect(screen.getByTestId('transactions').children.length).toBe(2);
     });
 });
