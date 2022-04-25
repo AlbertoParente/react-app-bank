@@ -25,7 +25,6 @@ describe('Principal component', () => {
             const values = {
                 trasaction: 'withdraw',
                 value: 50
-
             };
             const newBalance = calculateNewBalance(values, 150);
 
@@ -38,7 +37,7 @@ describe('Principal component', () => {
             const balance = screen.getByText('R$ 1000');
             const transaction = screen.getByLabelText('withdraw');
             const value = screen.getByTextId('value');
-            const transactionButton = screen.getByText('Carry Out Transaction')
+            const transactionButton = screen.getByText('Carry Out Transaction');
 
             expect(balance.textContent).toBe('R$ 1000');
 

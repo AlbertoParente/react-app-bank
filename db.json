@@ -1,43 +1,79 @@
 {
-  "account": {
-    "balance": 1200
-  },
-  "transactions": [
-    {
-      "value": 10,
-      "transaction": "withdraw",
-      "date": "01/03/2022",
-      "id": 1
+    "account": {
+        "balance": 1200
     },
-    {
-      "transaction": "deposit",
-      "value": "20",
-      "date": "29/03/2022",
-      "id": 2
-    },
-    {
-      "transaction": "deposit",
-      "value": "200",
-      "data": "31/03/2022",
-      "id": 3
-    },
-    {
-      "transaction": "withdraw",
-      "value": "200",
-      "data": "31/03/2022",
-      "id": 4
-    },
-    {
-      "transaction": "withdraw",
-      "value": "100",
-      "data": "31/03/2022",
-      "id": 5
-    },
-    {
-      "transaction": "deposit",
-      "value": "300",
-      "data": "31/03/2022",
-      "id": 6
-    }
-  ]
+    "transactions": [
+        {
+            "value": 10,
+            "transaction": "withdraw",
+            "date": "01/03/2022",
+            "id": 1
+        },
+        {
+            "transaction": "deposit",
+            "value": "20",
+            "date": "29/03/2022",
+            "id": 2
+        },
+        {
+            "transaction": "deposit",
+            "value": "200",
+            "data": "31/03/2022",
+            "id": 3
+        },
+        {
+            "transaction": "withdraw",
+            "value": "200",
+            "data": "31/03/2022",
+            "id": 4
+        },
+        {
+            "transaction": "withdraw",
+            "value": "100",
+            "data": "31/03/2022",
+            "id": 5
+        },
+        {
+            "transaction": "deposit",
+            "value": "300",
+            "data": "31/03/2022",
+            "id": 6
+        },
+        {
+            "value": 10,
+            "transaction": "withdraw",
+            "date": "01/03/2022",
+            "id": 7
+        },
+        {
+            "transaction": "deposit",
+            "value": "20",
+            "date": "29/03/2022",
+            "id": 8
+        },
+        {
+            "transaction": "deposit",
+            "value": "200",
+            "data": "31/03/2022",
+            "id": 9
+        },
+        {
+            "transaction": "withdraw",
+            "value": "200",
+            "data": "31/03/2022",
+            "id": 10
+        },
+        {
+            "transaction": "withdraw",
+            "value": "100",
+            "data": "31/03/2022",
+            "id": 11
+        },
+        {
+            "transaction": "deposit",
+            "value": "300",
+            "data": "31/03/2022",
+            "id": 12
+        }
+    ]
 }

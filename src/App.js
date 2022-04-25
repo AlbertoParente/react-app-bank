@@ -5,11 +5,10 @@ import api from './api';
 import './App.css';
 
 export const calculateNewBalance = (values, balance) => {
-    if (values.transaction === 'deposit') {
-        return balance + parseInt(values.value)
-    } else {
+    if (values.transaction === 'deposit')
+        return balance + parseInt(values.value);
+    else
         return balance - parseInt(values.value);
-    };
 };
 
 function App() {
@@ -28,8 +27,8 @@ function App() {
     function carryOutTransaction(values) {
         const newBalance = calculateNewBalance(values, balance);
 
-        api.toUpdateBalance(newBalance).catch((error) => console.error(error))
-        api.updateTransactions(values).catch((error) => console.error(error))
+        api.toUpdateBalance(newBalance).catch((error) => console.error(error));
+        api.updateTransactions(values).catch((error) => console.error(error));
 
         updateBalance(newBalance);
         updateTransactions([values]);

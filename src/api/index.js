@@ -7,7 +7,7 @@ const connect = (uri, options = {}) => {
         if (resp.ok) {
             const dados = await resp.json();
             return dados;
-        }
+        };
 
         console.log(resp);
         throw new Error(resp);

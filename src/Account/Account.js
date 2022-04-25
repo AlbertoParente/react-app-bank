@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Account.css'
+import './Account.css';
 
 const Account = ({ balance, carryOutTransaction }) => {
     const [values, updateValues] = useState({ transaction: '', value: 0 });
@@ -35,7 +35,6 @@ const Account = ({ balance, carryOutTransaction }) => {
                     />
                 </label>
             </div>
-
             <div>
                 <label>
                     Withdraw
@@ -49,7 +48,6 @@ const Account = ({ balance, carryOutTransaction }) => {
                     />
                 </label>
             </div>
-
             <label>Value:</label>
             <input
                 type="text"
@@ -57,8 +55,7 @@ const Account = ({ balance, carryOutTransaction }) => {
                 value={values.value}
                 data-testid="value"
                 onChange={handleChange}
-            ></input>
-
+            />
             <div>
                 <button type='submit'>
                     Carry Out Operation
